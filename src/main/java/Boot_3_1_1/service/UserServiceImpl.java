@@ -1,11 +1,9 @@
 package Boot_3_1_1.service;
 
-//public class UserServiceImpl {
-//}
-
 import Boot_3_1_1.dao.UserDao;
 import Boot_3_1_1.models.User;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,16 +21,19 @@ public class UserServiceImpl implements UserService {
         return userDao.getAllUsers();
     }
 
+    @Transactional
     @Override
     public void addUser(User user) {
         userDao.addUser(user);
     }
 
+    @Transactional
     @Override
     public void deleteUserById(Long id) {
         userDao.deleteUserById(id);
     }
 
+    @Transactional
     @Override
     public void updateUser(Long id, User user) {
         user.setId(id);
