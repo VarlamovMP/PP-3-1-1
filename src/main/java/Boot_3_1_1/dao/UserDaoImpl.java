@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
+
 @Repository
 public class UserDaoImpl implements UserDao {
 
